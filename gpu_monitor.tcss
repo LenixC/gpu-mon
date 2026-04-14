@@ -1,0 +1,63 @@
+/* gpu_monitor.tcss */
+
+Screen {
+    background: $surface;
+}
+
+Header {
+    height: 1;
+    background: $primary-darken-3;
+    color: $text;
+    padding: 0 2;
+}
+
+/* Outer body: side-by-side by default */
+#body {
+    height: 1fr;
+    overflow: hidden;
+}
+
+/* Cards pane takes remaining space */
+#cards {
+    padding: 1 0;
+    width: 1fr;
+    height: 1fr;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+GPUCard {
+    border: solid $primary-darken-2;
+    padding: 1 2;
+    margin: 0 1;
+    width: 52;
+    height: auto;
+}
+
+/* Process table sits to the right */
+#proctable {
+    border: solid $primary-darken-2;
+    padding: 1 2;
+    margin: 0 1;
+    width: 42;
+    height: 1fr;
+    overflow-y: auto;
+}
+
+/* Stacked: narrow terminals */
+#body.stacked {
+    layout: vertical;
+}
+
+#body.stacked #cards {
+    height: auto;
+    width: 1fr;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#body.stacked #proctable {
+    width: 1fr;
+    height: auto;
+    margin: 0 1 1 1;
+}
